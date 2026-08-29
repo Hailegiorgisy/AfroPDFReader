@@ -1,0 +1,8 @@
+# GUI Framework
+PyQt6>=6.5.0
+
+# PDF Processing Engine
+pymupdf>=1.23.0
+
+# Packaging (Optional, for building .exe)
+pyinstaller>=6.0.0
