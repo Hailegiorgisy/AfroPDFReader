@@ -1,8 +1,8 @@
 import sys
 import pymupdf  # PyMuPDF engine
-from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QImage, QPixmap
-from PyQt6.QtWidgets import (
+from PySide6.QtCore import Qt
+from PySide6.QtGui import QImage, QPixmap
+from PySide6.QtWidgets import (
     QApplication, QFileDialog, QHBoxLayout, QLabel,
     QMainWindow, QPushButton, QScrollArea, QVBoxLayout, QWidget
 )
@@ -116,3 +116,10 @@ if __name__ == "__main__":
     viewer = PDFReader()
     viewer.show()
     sys.exit(app.exec())
+window = webview.create_window(
+    'AfroPDF Reader',
+    url=os.path.join(web_dir, 'index.html'),
+    js_api=api,
+    width=1000,
+    height=700
+)

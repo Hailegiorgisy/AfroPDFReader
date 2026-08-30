@@ -1,6 +1,30 @@
 # Local Desktop PDF Reader
+# AfroPdf 📄✨
 
-A lightweight, cross-platform desktop PDF reader application built with Python, PyQt6, and PyMuPDF. It provides a clean, fast interface for opening, viewing, and navigating PDF documents locally without external server dependencies.
+**AfroPdf** is an ultra-lightweight, high-performance desktop PDF viewer designed for Windows. Built using Python, `pywebview` (utilizing native Windows WebView2), and Mozilla's PDF.js rendering engine, AfroPdf delivers a full-featured reading experience with an extremely small executable footprint .
+
+---
+
+## 🌟 Key Features
+
+* 🚀 **Ultra-Lightweight Footprint:** Built without heavy GUI frameworks (Qt/PySide), reducing executable size f.
+* ⚡ **High-Speed Rendering:** Powered by Mozilla's trusted `PDF.js` web engine for smooth page rendering and scrolling.
+* 🎨 **African & Ethiopian Heritage Iconography:** Custom-designed visual identity showcasing vibrant Ethiopian colors (Green, Yellow, Red) and geometric cultural motifs.
+* 🔒 **Offline First:** Completely self-contained with no external server or internet connectivity required.
+
+---
+
+## 🏗️ Project Structure
+
+```text
+AfroPdf/
+├── app.py              # Main Python entry point & pywebview native bridge
+├── app.spec            # PyInstaller build configuration
+├── app_icon.ico        # High-resolution application icon
+├── web/                # Frontend application resources
+│   ├── index.html      # UI layout & file selection interface
+│   └── pdfjs/          # Embedded PDF.js engine files
+└── README.md           # Project documentation
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.9%2B-brightgreen.svg)
@@ -36,5 +60,5 @@ Ensure you have Python 3.9 or higher installed on your machine.
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-username/local-pdf-reader.git](https://github.com/your-username/local-pdf-reader.git)
+   git clone [https://github.com/HAILEGIOGRIGY/AFROPDFREADER.git]
    cd local-pdf-reader
