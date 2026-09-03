@@ -15,15 +15,27 @@ class AfroPDFAPI:
 
     def open_file_dialog(self):
         """Opens native file explorer dialog to select a PDF."""
-        window = webview.windows[0]
-        file_types = ("PDF Files (*.pdf)", "All files (*.*)")
-        result = window.create_file_dialog(
-            webview.OPEN_DIALOG, allow_multiple=False, file_types=file_types
-        )
+        try:
+            # Safely grab the active window or fallback to the first window instance
+            window = webview.active_window()
+            if not window and webview.windows:
+                window = webview.windows[0]
 
-        if result and len(result) > 0:
-            return self.load_pdf(result[0])
-        return {"status": "cancelled"}
+            if not window:
+                return {"status": "error", "message": "No active window found"}
+
+            file_types = ("PDF Files (*.pdf)", "All files (*.*)")
+            result = window.create_file_dialog(
+                webview.OPEN_DIALOG,
+                allow_multiple=False,
+                file_types=file_types,
+            )
+
+            if result and len(result) > 0:
+                return self.load_pdf(result[0])
+            return {"status": "cancelled"}
+        except Exception as e:
+            return {"status": "error", "message": str(e)}
 
     def load_pdf(self, file_path):
         """Loads PDF, extracts TOC, and encodes file data for rendering."""
