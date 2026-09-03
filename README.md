@@ -1,64 +1,41 @@
-# Local Desktop PDF Reader
-# AfroPdf 📄✨
+# AfroPDFReader 📄✨
 
-**AfroPdf** is an ultra-lightweight, high-performance desktop PDF viewer designed for Windows. Built using Python, `pywebview` (utilizing native Windows WebView2), and Mozilla's PDF.js rendering engine, AfroPdf delivers a full-featured reading experience with an extremely small executable footprint .
+**AfroPDFReader** is an ultra-lightweight, high-performance desktop PDF reader designed for Windows. Built using **Python**, **pywebview** (utilizing native Windows WebView2), and **PyMuPDF**, it delivers a full-featured reading experience with a portable, standalone executable footprint (~27 MB) and zero runtime dependencies.
+
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
+![Python](https://img.shields.io/badge/python-3.14-green.svg)
 
 ---
 
 ## 🌟 Key Features
 
-* 🚀 **Ultra-Lightweight Footprint:** Built without heavy GUI frameworks (Qt/PySide), reducing executable size f.
-* ⚡ **High-Speed Rendering:** Powered by Mozilla's trusted `PDF.js` web engine for smooth page rendering and scrolling.
-* 🎨 **African & Ethiopian Heritage Iconography:** Custom-designed visual identity showcasing vibrant Ethiopian colors (Green, Yellow, Red) and geometric cultural motifs.
-* 🔒 **Offline First:** Completely self-contained with no external server or internet connectivity required.
+* 🚀 **Ultra-Lightweight & Portable:** Built without heavy GUI frameworks like Qt or PySide, running as a standalone `.exe` with UPX compression.
+* ⚡ **High-Speed Engine:** Powered by PyMuPDF (`fitz`) and MuPDF C-engine backend for rapid rendering and text extraction.
+* 🔍 **In-Document Full-Text Search:** Real-time search with match previews, page jumping, and dynamic bounding box highlights overlay.
+* 🗂️ **Sidebar Navigation & Outline:** Collapsible sidebar housing Table of Contents (TOC), active bookmarks, and search results.
+* 🎨 **Theme Engine:** Instant switching between **Dark Mode**, **Light Mode**, and high-contrast **OLED Black**.
+* 🎨 **African & Ethiopian Heritage Branding:** Custom-designed visual identity showcasing vibrant cultural iconography.
+* 🔒 **100% Offline & Private:** Operates entirely on your local file system with zero telemetry or network calls.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Language:** Python 3.14
+* **UI & Viewport:** [pywebview](https://pywebview.flowrl.com/) (MS WebView2 Bridge)
+* **PDF Engine:** [PyMuPDF / fitz](https://pymupdf.readthedocs.io/)
+* **Packaging & Compression:** PyInstaller + UPX
 
 ---
 
 ## 🏗️ Project Structure
 
 ```text
-AfroPdf/
-├── app.py              # Main Python entry point & pywebview native bridge
-├── app.spec            # PyInstaller build configuration
+AfroPDFReader/
+├── pdf_reader.py       # Main Python entry point, JS bridge, & PyMuPDF logic
+├── build.py            # Automated Nuitka/PyInstaller build script
 ├── app_icon.ico        # High-resolution application icon
-├── web/                # Frontend application resources
-│   ├── index.html      # UI layout & file selection interface
-│   └── pdfjs/          # Embedded PDF.js engine files
+├── requirements.txt    # Python dependencies
+├── setup_script.iss    # Inno Setup installer script
 └── README.md           # Project documentation
-
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Python](https://img.shields.io/badge/python-3.9%2B-brightgreen.svg)
-![PyQt6](https://img.shields.io/badge/GUI-PyQt6-informational.svg)
-
----
-
-## Features
-
-* **Fast Rendering:** Powered by PyMuPDF (`fitz`) for quick page load times.
-* **Smooth Page Navigation:** Next/Previous controls and direct page tracking.
-* **Dynamic Zooming:** Dynamic resolution scaling for clear text reading.
-* **Fully Offline:** Operates entirely locally on your file system without telemetry or data transfers.
-
----
-
-## Tech Stack
-
-* **Language:** Python 3.9+
-* **GUI Framework:** PyQt6
-* **PDF Processing Engine:** PyMuPDF (`pymupdf`)
-* **Packaging:** PyInstaller & Inno Setup
-
----
-
-## Getting Started
-
-### Prerequisites
-
-Ensure you have Python 3.9 or higher installed on your machine.
-
-### Installation & Local Setup
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/HAILEGIOGRIGY/AFROPDFREADER.git]
-   cd local-pdf-reader
