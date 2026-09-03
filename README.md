@@ -39,3 +39,5 @@ AfroPDFReader/
 ├── requirements.txt    # Python dependencies
 ├── setup_script.iss    # Inno Setup installer script
 └── README.md           # Project documentation
+```powershell
+pyinstaller --noconfirm --onefile --windowed --upx-dir="upx-5.2.1-win64" --icon="app_icon.ico" --name="afropdfreader" pdf_reader.py
